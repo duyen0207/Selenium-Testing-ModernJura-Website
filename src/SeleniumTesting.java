@@ -6,8 +6,7 @@ public class SeleniumTesting {
         System.setProperty("webdriver.chrome.driver","src/ChromeDriver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://selenium.dev");
+        driver.get("http://127.0.0.1:5000/");
 
-        driver.quit();
     }
 }
