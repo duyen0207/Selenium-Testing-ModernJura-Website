@@ -13,26 +13,29 @@ public class SeleniumTesting {
     }
 
     @Test
-    void Test_Register() {
-        AuthTesting.register(driver, "duyenle2072001@gmail.com", "duyen0207", "duyen0207", "duyen0207");
+    void Test1_Login() throws InterruptedException {
+//        Thread.sleep(1000);
+        driver.manage().window().maximize();
+
+        AuthTesting.login(driver, "duyenle2072001@gmail.com", "duyen0207");
+//        Thread.sleep(1000);
         String expectedUrl = "http://127.0.0.1:5000/";
         String actualUrl = driver.getCurrentUrl();
-
         Assertions.assertEquals(expectedUrl, actualUrl);
-
         driver.quit();
     }
 
     @Test
-    void Test_Login() {
-        AuthTesting.login(driver, "duyenle2072001@gmail.com", "duyen0207");
+    void Test2_Register() throws InterruptedException {
+//        Thread.sleep(1000);
+        driver.manage().window().maximize();
 
+        AuthTesting.register(driver, "duyenle2072001@gmail.com", "duyen0207", "duyen0207", "duyen0207");
+//        Thread.sleep(1000);
         String expectedUrl = "http://127.0.0.1:5000/";
         String actualUrl = driver.getCurrentUrl();
-
         Assertions.assertEquals(expectedUrl, actualUrl);
+
         driver.quit();
     }
-
-
 }
