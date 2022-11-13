@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class AuthTesting {
-    public static void login(WebDriver driver, String email, String password) throws InterruptedException {
+    public static void login(WebDriver driver, String email, String password){
         driver.findElement(By.xpath("//button[contains(text(),'Login')]")).click();
 
         WebElement Email = driver.findElement(By.name("email"));
@@ -13,14 +13,14 @@ public class AuthTesting {
         Email.sendKeys(email);
         Password.sendKeys(password);
 
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
         login.click();
 
     }
 
-    public static void register(WebDriver driver, String email, String username, String password, String repass) throws InterruptedException {
+    public static void register(WebDriver driver, String email, String username, String password, String repass){
         driver.findElement(By.id("login-button")).click();
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
         driver.findElement(By.xpath("//a[contains(text(),'Register here')]")).click();
 
         WebElement Email = driver.findElement(By.name("email"));
@@ -35,7 +35,7 @@ public class AuthTesting {
         Password.sendKeys(password);
         Repass.sendKeys(repass);
 
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
         register.submit();
     }
 }
