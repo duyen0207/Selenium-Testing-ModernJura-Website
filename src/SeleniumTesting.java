@@ -43,11 +43,8 @@ public class SeleniumTesting {
     @Test
     void Test3_playGame() throws InterruptedException {
         driver.manage().window().maximize();
-        testPlayGame.testPlayGame(driver);
-        String expectedURL = "http://127.0.0.1:5000/gamePage/3";
-        String actualURL = driver.getCurrentUrl();
-
-        Assertions.assertEquals(expectedURL, actualURL);
+        String expectedURL = "http://127.0.0.1:5000/playGame/3";
+        Assertions.assertEquals(expectedURL, testPlayGame.testPlayGame(driver));
 
         driver.quit();
     }
