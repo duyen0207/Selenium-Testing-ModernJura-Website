@@ -21,7 +21,8 @@ public class AuthTesting {
     }
 
     public static void register(WebDriver driver, String email, String username, String password, String repass) throws InterruptedException {
-        driver.findElement(By.id("login-button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Login')]")).click();
+
         Thread.sleep(3000);
         driver.findElement(By.xpath("//a[contains(text(),'Register here')]")).click();
 
